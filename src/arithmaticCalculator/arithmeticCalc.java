@@ -10,13 +10,13 @@ class userInputs
 	//taking inputs from user
 	public double inB()
 	{
-		System.out.println("enter Second Numbeer: ");
+		System.out.print("enter Second Numbeer: ");
 		double b = sc.nextDouble();
 		return b;
 	}
 	public double inA()
 	{
-		System.out.println("enter First Number: ");
+		System.out.print("enter First Number: ");
 		double a = sc.nextDouble();
 		return a;
 	}
@@ -117,6 +117,7 @@ public class arithmeticCalc {
 		System.out.print("Please select an Operation: ");
 		
 		// creates an object of Scanner class
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		
 		//taking input from the user
