@@ -1,99 +1,76 @@
 package arithmaticCalculator;
 import java.util.*;
 
+class userInputs
+{
+	Scanner sc = new Scanner(System.in);
+	
+	public double inB()
+	{
+		System.out.println("enter Second Numbeer: ");
+		double b = sc.nextDouble();
+		return b;
+	}
+	public double inA()
+	{
+		System.out.println("enter First Number: ");
+		double a = sc.nextDouble();
+		return a;
+	}
+}
+
 class addition
 {
-	public void add(Scanner sc)
+	public void add()
 	{
-		System.out.println("Start Adding: ");
-		int ans = 0;
+		userInputs objUi = new userInputs();
+		double a = objUi.inA();
+		double b = objUi.inB();
+		double ans = a+b;
+		System.out.println("-----------------");
+		System.out.println("Answer: "+ans);	
+		System.out.println("-----------------");
 		
-		while(true)
-		if(sc.hasNextInt())
-		{
-			
-			int a = sc.nextInt();
-			ans+=a;
-			System.out.println("-----------------");
-			System.out.println("Answer: "+ans+"\nE - Exit");
-			System.out.println("-----------------");
-		}
-		else
-		{
-			arithmeticCalc.main(null);
-		}
 	}
 }
 
 class subtraction
 {
-	public void subt(Scanner sc)
+	public void subt()
 	{
-		double ans = sc.nextDouble();
-		while(true)
-		{
-			sc.hasNextDouble();
-			double a = sc.nextInt();
-			if(ans<0)
-			{
-				ans = ans+a;
-			}
-			else if(ans>0)
-			{
-				ans = ans-a;
-			}
-			System.out.println("-----------------");
+		userInputs objUi = new userInputs();
+		double a = objUi.inA();
+		double b = objUi.inB();
+		double ans = a-b;
+		System.out.println("-----------------");
+		System.out.println("Answer: "+ans);	
+		System.out.println("-----------------");
 			
-			System.out.println("Answer: "+ans+"\nEnter next number: ");
-			System.out.println("E - Exit");
-			
-			System.out.println("-----------------");
-			if(!sc.hasNextDouble())
-			{
-				arithmeticCalc.main(null);
-			}
-		}
-		
 	}
 }
 
 class multiplication
 {
-	public void multi(Scanner sc)
+	public void multi()
 	{
-		Double ans = 1.0;
-		System.out.println("Start Multiplying: ");
-		while(true)
-		{
-			if(sc.hasNextDouble())
-			{
-				Double a = sc.nextDouble();
-				ans*=a;
-				System.out.println("-----------------");
-				System.out.println("Answer: "+ans+"\nE - Exit");
-				System.out.println("-----------------");
-				
-			}
-			else
-			{
-				arithmeticCalc.main(null);
-			}
-		}
+		userInputs objUi = new userInputs();
+		double a = objUi.inA();
+		double b = objUi.inB();
+		double ans = a*b;
+		System.out.println("-----------------");
+		System.out.print("Answer: ");
+		System.out.format("%.3f\n",ans);
+		System.out.println("-----------------");
 	}
 }
 
-
-
-
 class division
 {
-	public void div(Scanner sc)
+	public void div()
 	{
-		System.out.println("enter First value: ");
-		double a = sc.nextDouble();
-		System.out.println("enter Second value: ");
-		double b = sc.nextDouble();
-		
+		userInputs objUi = new userInputs();
+		double a = objUi.inA();
+		double b = objUi.inB();
 		double ans = a/b;
 		System.out.println("-----------------");
 		System.out.print("Answer: ");
@@ -107,9 +84,7 @@ class division
 		{
 			System.out.format("%.3f\n",ans);
 		}
-		System.out.println("-----------------");
-		arithmeticCalc.main(null);
-		
+		System.out.println("-----------------");	
 	}
 }
 
@@ -130,21 +105,26 @@ public class arithmeticCalc {
 		switch(operation)
 		{
 		case 1:
-			//creating object of class addition
+			//created object of class addition
 			addition objA = new addition();
 			
-			//passing scanner scanner object to a method
-			objA.add(sc);
+			//passing scanner object to the method and calling the class
+			objA.add();
+			break;
 		case 2:
-			//creating object of class subtraction
+			//created object of class subtraction
 			subtraction objS = new subtraction();
-			objS.subt(sc);
+			
+			//passing scanner object to the method and calling the class
+			objS.subt();
+			break;
 		case 3:
 			multiplication objM = new multiplication();
-			objM.multi(sc);
+			objM.multi();
+			break;
 		case 4:
 			division objD = new division();
-			objD.div(sc);
+			objD.div();
 		
 		}
 		
