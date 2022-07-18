@@ -147,8 +147,10 @@ public class arithmeticCalc {
 		case 4:
 			division objD = new division();
 			objD.divide();
+			break;
 		default:
 			System.out.println("Wrong input ");
+			break;
 		}
 		System.out.print("\n");
 		arithmeticCalc.main(null);
