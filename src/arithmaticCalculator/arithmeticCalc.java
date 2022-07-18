@@ -1,10 +1,13 @@
 package arithmaticCalculator;
 import java.util.*;
 
+//Declared a input class to store all the inputs at once
 class userInputs
 {
 	Scanner sc = new Scanner(System.in);
 	
+	//used public access specifier 
+	//taking inputs from user
 	public double inB()
 	{
 		System.out.println("enter Second Numbeer: ");
@@ -19,14 +22,18 @@ class userInputs
 	}
 }
 
+//Declared addition class to perform Addition
 class addition
 {
 	public void add()
 	{
+		//calling userInput class for getting inputs from user
 		userInputs objUi = new userInputs();
 		double a = objUi.inA();
 		double b = objUi.inB();
 		double ans = a+b;
+		
+		//output to the user
 		System.out.println("-----------------");
 		System.out.println("Answer: "+ans);	
 		System.out.println("-----------------");
@@ -34,14 +41,18 @@ class addition
 	}
 }
 
+//Declared subtraction class to perform Subtraction
 class subtraction
 {
-	public void subt()
+	public void subtract()
 	{
+		//calling userInput method for getting inputs from user
 		userInputs objUi = new userInputs();
 		double a = objUi.inA();
 		double b = objUi.inB();
 		double ans = a-b;
+		
+		//output to the user
 		System.out.println("-----------------");
 		System.out.println("Answer: "+ans);	
 		System.out.println("-----------------");
@@ -49,29 +60,39 @@ class subtraction
 	}
 }
 
+//Declared multiplication class to perform multiply
 class multiplication
 {
-	public void multi()
+	public void multiply()
 	{
+		//calling userInput method for getting inputs from user
 		userInputs objUi = new userInputs();
 		double a = objUi.inA();
 		double b = objUi.inB();
 		double ans = a*b;
+		
+		//output to the user
 		System.out.println("-----------------");
 		System.out.print("Answer: ");
+		
+		//used format to fix length after decimal value
 		System.out.format("%.3f\n",ans);
 		System.out.println("-----------------");
 	}
 }
 
+//Declared division class to perform divide
 class division
 {
-	public void div()
+	public void divide()
 	{
+		//calling userInput method for getting inputs from user
 		userInputs objUi = new userInputs();
 		double a = objUi.inA();
 		double b = objUi.inB();
 		double ans = a/b;
+		
+		//output to the user
 		System.out.println("-----------------");
 		System.out.print("Answer: ");
 		if(a%b == 0)
@@ -93,7 +114,7 @@ public class arithmeticCalc {
 	{
 		//Displaying all the operations to user to perform
 		System.out.println(" 1. Addition\n 2. Subtraction\n 3. Multiplication\n 4. Division\n ");
-		System.out.println("Please select an Operation");
+		System.out.print("Please select an Operation: ");
 		
 		// creates an object of Scanner class
 		Scanner sc = new Scanner(System.in);
@@ -116,17 +137,20 @@ public class arithmeticCalc {
 			subtraction objS = new subtraction();
 			
 			//calling the class
-			objS.subt();
+			objS.subtract();
 			break;
 		case 3:
 			multiplication objM = new multiplication();
-			objM.multi();
+			objM.multiply();
 			break;
 		case 4:
 			division objD = new division();
-			objD.div();
-
+			objD.divide();
+		default:
+			System.out.println("Wrong input ");
 		}
+		System.out.print("\n");
+		arithmeticCalc.main(null);
 	}
 	
 }
