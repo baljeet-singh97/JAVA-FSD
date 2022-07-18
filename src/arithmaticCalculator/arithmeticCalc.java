@@ -108,14 +108,14 @@ public class arithmeticCalc {
 			//created object of class addition
 			addition objA = new addition();
 			
-			//passing scanner object to the method and calling the class
+			//calling the class
 			objA.add();
 			break;
 		case 2:
 			//created object of class subtraction
 			subtraction objS = new subtraction();
 			
-			//passing scanner object to the method and calling the class
+			//calling the class
 			objS.subt();
 			break;
 		case 3:
@@ -125,10 +125,8 @@ public class arithmeticCalc {
 		case 4:
 			division objD = new division();
 			objD.div();
-		
+
 		}
-		
 	}
 	
-
 }
